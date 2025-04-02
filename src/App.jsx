@@ -6,6 +6,7 @@ import Register from './Components/Register';
 import Home from './Components/Home';
 import UserProfile from './Components/UserProfile';
 import AdminProfile from './Components/AdminProfile';
+import AdminPro from './Components/AdminPro/AdminPro'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route path="/chatbot" element={<ChatbotUI />} />
         <Route path="/userProfile" element={<UserProfile />} />
         <Route path="/adminProfile" element={<AdminProfile />} />
+        <Route path="/adminPro" element={<AdminPro />} />
         <Route path="" element={<Home />} />
       </Routes>
     </Router>
