@@ -9,6 +9,7 @@ import AdminProfile from './Components/AdminProfile';
 import AdminPro from './Components/AdminPro/AdminPro'
 import SOSButton from './Components/SOSButton';
 import Registration from './Components/Register/Registration'
+import LoginPage from './Components/Login/LoginPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +17,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/loginP" element={<Login />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/chatbot" element={<ChatbotUI />} />
