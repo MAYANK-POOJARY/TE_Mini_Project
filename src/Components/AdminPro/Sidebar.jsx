@@ -16,7 +16,7 @@ const Sidebar = ({ setActiveSection, activeSection }) => {
         <button onClick={() => setActiveSection("Crime Reports")} className={`flex items-center space-x-2 ${activeSection === "Crime Reports" ? "text-blue-400" : "hover:text-gray-300"}`}>
           <FaClipboardList /> <span>Crime Reports</span>
         </button>
-        <button onClick={() => setActiveSection("Graphs")} className={`flex items-center space-x-2 ${activeSection === "Graphs" ? "text-blue-400" : "hover:text-gray-300"}`}>
+        <button onClick={() => setActiveSection("Graphs")} className={`flex items-center space-x-2 ${activeSection === "ReportsGraph" ? "text-blue-400" : "hover:text-gray-300"}`}>
           <FaChartBar /> <span>Graphs</span>
         </button>
         <button onClick={() => setActiveSection("Settings")} className={`flex items-center space-x-2 ${activeSection === "Settings" ? "text-blue-400" : "hover:text-gray-300"}`}>

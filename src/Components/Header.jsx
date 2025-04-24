@@ -14,10 +14,10 @@ const Header = () => {
         
         {/* Navigation Links */}
         <nav>
-          <ul className="flex space-x-6">
+          <ul className="flex items-center space-x-6">
             <li><Link to="/" className="bg-white text-blue-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200">Home</Link></li>
-            <li><Link to="/about" className="bg-white text-blue-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200">About Us</Link></li>
-            <li><Link to="/contact" className="bg-white text-blue-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200">Contact Us</Link></li>
+            <li><button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })} className="bg-white text-blue-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200"> About Us</button></li>
+            <li><button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })} className="bg-white text-blue-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 ">Contact Us</button></li>
           </ul>
         </nav>
         

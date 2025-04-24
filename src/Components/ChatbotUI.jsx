@@ -29,7 +29,7 @@ const ChatbotUI = () => {
     setIsTyping(true);
     
     setTimeout(() => {
-      const botMessage = { text: "Hello! How can I assist?", sender: "bot" };
+      const botMessage = { text: "Welcome to the Crime Assistance Bot. Please choose an option: 1.Crime Registration 2.Crime Awareness", sender: "bot" };
       const updatedChatWithBot = { ...updatedChat, messages: [...updatedChat.messages, botMessage] };
       setChats(prevChats => prevChats.map(chat => chat.id === currentChat.id ? updatedChatWithBot : chat));
       setCurrentChat(updatedChatWithBot);

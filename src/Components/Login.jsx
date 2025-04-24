@@ -1,31 +1,47 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import AxiosInstance from "../Components/Axios/AxiosInstance";
 
 const Login = () => {
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    setError("");
 
-    if (email !== "correctemail@example.com") {
-      setEmailError("Email not found. Please try again.");
-      setPasswordError("");
-    } else if (password !== "correctpassword") {
-      setEmailError("");
-      setPasswordError("Incorrect password. Please try again.");
-    } else {
-      setEmailError("");
-      setPasswordError("");
+    try {
+      const response = await AxiosInstance.post("/login/", formData);
+      const { token, role } = response.data;
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
+
+      alert("Login successful!");
+
+      // Navigate based on role
+      if (role === "Admin") {
+        navigate("/adminpro");
+      } else if (role === "User") {
+        navigate("/");
+      } else {
+        navigate("/");
+      }
+
+    } catch (err) {
+      setError("Invalid email or password. Please try again.");
     }
   };
 
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Left Side */}
-      <div className="w-1/2 flex flex-col items-center justify-center  bg-[rgb(1,7,137)] text-white p-10">
+      <div className="w-1/2 flex flex-col items-center justify-center bg-[rgb(1,7,137)] text-white p-10">
         <h1 className="text-5xl font-extrabold mb-4">Empowering Safety</h1>
         <p className="text-lg text-center max-w-md">
           One Step at a Time, Ensuring Awareness & Security for Everyone.
@@ -43,6 +59,8 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full p-4 border border-gray-300 rounded-lg"
               required
             />
@@ -50,6 +68,8 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
               className="w-full p-4 border border-gray-300 rounded-lg"
               required
             />
@@ -60,24 +80,26 @@ const Login = () => {
               Login
             </button>
           </form>
-          {emailError && <p className="text-center font-semibold mt-2 text-red-500 text-sm">{emailError}</p>}
-          {passwordError && (<p className="text-center font-semibold mt-2 text-red-500 text-sm">{passwordError}</p>)}
 
-          {passwordError && (
-            <p className="mt-2 text-center text-gray-600">
-              <Link
-                to="/reset-password"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Forgot password?
-              </Link>
+          {error && (
+            <p className="text-center font-semibold mt-2 text-red-500 text-sm">
+              {error}
             </p>
           )}
+
+          <p className="mt-2 text-center text-gray-600">
+            <Link
+              to="/reset-password"
+              className="text-blue-600 font-semibold hover:underline"
+            >
+              Forgot password?
+            </Link>
+          </p>
 
           <p className="mt-4 text-center text-gray-600">
             Don't have an account?
             <Link
-              to="/register"
+              to="/registration"
               className="text-blue-600 font-semibold ml-1 hover:underline"
             >
               Register

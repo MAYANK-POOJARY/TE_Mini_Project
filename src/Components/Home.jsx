@@ -28,13 +28,13 @@ const Home = () => {
             </div>
           </div>
           <div className="ml-auto overflow-hidden">
-            <img  src="https://images.unsplash.com/photo-1526666361175-e3595627c376?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='registration' className="w-150 h-60 object-cover rounded-[25px]"/>
+            <img  src="https://images.unsplash.com/photo-1453873531674-2151bcd01707?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='registration' className="w-150 h-60 object-cover rounded-[25px]"/>
           </div>
         </div>
 
         <div className="bg-blue-900 p-6 rounded-[25px] shadow-lg flex flex-col md:flex-row gap-6">
           <div className="ml-0 overflow-hidden">
-            <img  src="https://images.unsplash.com/photo-1526666361175-e3595627c376?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='registration' className="w-150 h-60 object-cover rounded-[25px]"/>
+            <img  src="https://plus.unsplash.com/premium_photo-1681487977919-306ef7194d98?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='registration' className="w-150 h-60 object-cover rounded-[25px]"/>
           </div>
           <div className="md:w-2/3 ml-auto">
             <h2 className="text-4xl font-semibold mb-4 text-left">Stay Informed, Stay Safe</h2>
@@ -50,11 +50,11 @@ const Home = () => {
             <h2 className="text-4xl font-semibold mb-4 mt-3 text-left ">Emergency SOS: Help at Your Fingertips</h2>
             <p className="text-gray-300 text-2xl text-left">In critical moments, every second counts. Our SOS feature ensures instant access to emergency assistance, connecting you to help when you need it most. Stay safe, stay prepared.</p>
             <div className="text-left mt-5">
-            <Link to="" className='px-3 py-2 rounded-lg bg-white text-black font-bold text-lg hover:bg-gray-300 transition duration-300'>SOS</Link>
+            <Link to="/SOS" className='px-3 py-2 rounded-lg bg-white text-black font-bold text-lg hover:bg-gray-300 transition duration-300'>SOS</Link>
             </div>
           </div>
           <div className="ml-auto overflow-hidden">
-            <img  src="https://images.unsplash.com/photo-1526666361175-e3595627c376?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='registration' className="w-150 h-60 object-cover rounded-[25px]"/>
+            <img  src="https://images.unsplash.com/photo-1648499510197-9c9b5e062c83?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='registration' className="w-150 h-60 object-cover rounded-[25px]"/>
           </div>
         </div>
       </div>
